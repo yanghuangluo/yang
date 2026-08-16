@@ -6,18 +6,17 @@ on:
 
 jobs:
   build:
-    runs‑on: ubuntu‑latest
+    runs-on: ubuntu-latest
     steps:
-      ‑ uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      ‑ name: Buildozer build
-        uses: ArtemSBulgakov/buildozer‑action@main
+      - name: Buildozer build
+        uses: ArtemSBulgakov/buildozer-action@main
         with:
-          buildozer‑arguments: android debug
+          buildozer-arguments: android debug
 
-      ‑ name: Upload APK
-        uses: actions/upload‑artifact@v4
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
         with:
-          name: apk‑package
+          name: apk-package
           path: ./bin/*.apk
-
